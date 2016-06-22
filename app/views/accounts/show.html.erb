@@ -1,0 +1,41 @@
+<% provide(:title, "Account:  #{@account.name}") %>
+<p><%= link_to "< Back to Account List", accounts_path %></p>
+<h1>Account Profile</h1>
+<table class="table table-bordered">
+  <tr>
+    <td>Name</td>
+    <td><%= @account.name %></td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><%= @account.address %></td>
+  </tr>
+  <tr>
+    <td>Country</td>
+    <td><%= @account.country %></td>
+  </tr>
+  <tr>
+    <td>Postal Code</td>
+    <td><%= @account.postal_code %></td>
+  </tr>
+  <tr>
+    <td>Announcement</td>
+    <td><%= @account.announce %></td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to "[Edit]", edit_account_path(@account.id) %>
+</p><br>
+
+<% if @account.like_user(current_user) %>
+   <div id="like-button">
+     <%= image_tag("useful-black.png") %>
+     <%= likes_counter(@likes) %>
+   </div>
+<% else %>
+   <div id="like-button">
+     <%= image_tag("useful-lightgrey.png")%>
+     <div id="like-sum"><%= likes_counter(@likes) %></div>
+  </div>
+<% end %>

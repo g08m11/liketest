@@ -1,0 +1,36 @@
+<%= form_for(@user, html: { multipart: true }) do |f| %>
+<div class="form-group">
+<%= render 'shared/error_messages', object: f.object %>
+<p>
+  <%= f.label :name, class: "control-label" %><br>
+  <%= f.text_field :name, class: "form-control" %>
+</p>
+
+<p>
+  <%= f.label :email, class: "control-label" %><br>
+  <%= f.email_field :email, class: "form-control" %>
+</p>
+
+<p>
+  <%= f.label :password, class: "control-label" %><br>
+  <%= f.password_field :password, class: "form-control" %>
+</p>
+
+<p>
+  <%= f.label :password_confirmation, class: "control-label" %><br>
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+</p><br>
+
+<% if @current_user.admin == true %>
+  <p>
+    <%= f.label :account_id, class: "control-label" %><br>
+    <%= f.collection_select :account_id, @accounts, :id, :name, class: "form-control", include_blank: true %><br>
+  </p><br>
+<% else %>
+<%= f.hidden_field :account_id, class: "form-control", value: @user.account_id %>
+<% end %>
+
+<p><%= f.submit class: "btn btn-primary" %></p>
+
+</div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_for(@message) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.hidden_field :task_id, value: @task.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.text_area :body, placeholder: "Compose new message...", required: true %>
+  </div>
+  <%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>

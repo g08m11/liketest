@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jobtype: MyString
+  title: MyString
+  department: MyString
+  due: 2016-06-06
+  requirement: MyString
+  scheduled: 2016-06-06
+  progress: 1
+  timespent: 1.5
+  completed: 2016-06-06
+  outputcomment: MyString
+  file: 1
+  outputfile: 1
+
+two:
+  jobtype: MyString
+  title: MyString
+  department: MyString
+  due: 2016-06-06
+  requirement: MyString
+  scheduled: 2016-06-06
+  progress: 1
+  timespent: 1.5
+  completed: 2016-06-06
+  outputcomment: MyString
+  file: 1
+  outputfile: 1

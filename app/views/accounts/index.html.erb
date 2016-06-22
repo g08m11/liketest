@@ -1,0 +1,29 @@
+<% provide(:title, "Account List") %>
+<h1>Account List</h1>
+
+<p><%= link_to "+ New Account", new_account_path,  class: "btn btn-primary"%></p><br>
+
+<table class="table table-bordered table-hover" >
+  <thead>
+    <tr>
+      <th>Account ID</th>
+      <th>Account Name</th>
+      <th>Account Info.</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= link_to account.name, account_path(account.id) %></td>
+        <td><%= link_to "[Show]", account_path(account.id) %></td>
+        <td><%= link_to "[Edit]", edit_account_path(account.id) %></td>
+        <td><%= link_to "[Delete]", account_path(account.id), method: :delete, data:{ confirm: "Are you sure?" } %></td>
+        <td><%= account.created_at.strftime("%d %b" "%y")  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
