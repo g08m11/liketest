@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160622034950) do
   add_index "materialfiles", ["task_id"], name: "index_materialfiles_on_task_id"
 
   create_table "messages", force: :cascade do |t|
-    t.string   "body"
+    t.text     "body"
     t.integer  "task_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -85,12 +85,12 @@ ActiveRecord::Schema.define(version: 20160622034950) do
     t.string   "title"
     t.string   "department"
     t.date     "due"
-    t.string   "requirement"
+    t.text     "requirement"
     t.date     "scheduled"
     t.integer  "progress",      default: 0
     t.float    "timespent",     default: 0.0
     t.date     "completed"
-    t.string   "outputcomment"
+    t.text     "outputcomment"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "account_id"

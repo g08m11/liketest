@@ -10,5 +10,5 @@ class LikesController < ApplicationController
     @like.destroy
     @likes = Like.where(account_id: params[:account_id])
   end
-  
+
 end
