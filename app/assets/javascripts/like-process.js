@@ -1,7 +1,7 @@
 var $heart = $("#like-button img");
 $("#like-button").on("click", function(){
   var $likeSum = $("#like-sum");
-  like_function(#{@account.id.to_i}, $(this), $heart, $likeSum)
+  like_function(<%= @account.id %>, $(this), $heart, $likeSum)
 });
 
 function like_function(id, button, heart, sum) {
